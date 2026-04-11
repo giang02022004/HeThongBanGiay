@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0066FF;
+  --color-secondary: #7C3AED;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* Neumorphism Admin Colors */
+  --color-admin-teal: #006666;
+  --color-admin-surface: #E7E5E4;
+  --color-admin-text: #1E2938;
+
+  --font-bangers: "Bangers", cursive;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-outfit: "Outfit", sans-serif;
+  
+  /* Neumorphism Admin Fonts */
+  --font-space: "Space Mono", monospace;
+  --font-jetbrains: "JetBrains Mono", monospace;
+
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@layer base {
+  body {
+    @apply font-outfit bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  /* Worker Friendly Styles */
+  .modern-card {
+    @apply bg-white rounded-4xl shadow-sm border border-gray-100 p-6;
+  }
+  
+  .modern-shadow {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+
+  .interactive-button {
+    @apply transition-all duration-300 active:scale-95 hover:shadow-lg;
+  }
+
+  /* Neumorphism Admin Styles */
+  .admin-neumorph-flat {
+    background: #E7E5E4;
+    box-shadow: 8px 8px 16px #c5c3c2, -8px -8px 16px #ffffff;
+    border-radius: 20px;
+  }
+  
+  .admin-neumorph-inset {
+    background: #E7E5E4;
+    box-shadow: inset 8px 8px 16px #c5c3c2, inset -8px -8px 16px #ffffff;
+    border-radius: 20px;
+  }
+
+  .admin-neumorph-button {
+    background: #E7E5E4;
+    box-shadow: 6px 6px 12px #c5c3c2, -6px -6px 12px #ffffff;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+  
+  .admin-neumorph-button:active {
+    box-shadow: inset 4px 4px 8px #c5c3c2, inset -4px -4px 8px #ffffff;
+    transform: scale(0.98);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
